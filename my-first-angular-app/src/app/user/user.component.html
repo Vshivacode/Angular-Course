@@ -1,0 +1,110 @@
+<!-- using zone.js  -->
+<!-- Can lead to unnecessary change detection cycles because it checks the entire component tree after every asynchronous task.
+Implicitly manages change detection, which can sometimes make debugging and performance optimization challenging.
+Suitable for applications where automatic change detection simplifies development. -->
+<!-- <div> -->
+    <!-- Adding Event Listener -->
+    <!-- to add an eventlistener in angular we write like this 
+    see in the users.ts file  -->
+    <!-- <button (click)="onbuttonClicked()">    calling method inside quotes -->
+       
+       
+       
+        <!-- Property Binding:
+        - we use the [attribute name]="file path"
+        - can be used with attributes like this -->
+        <!-- <img [src]="'../assets/users/' + selectedUser.avatar" [alt]="'assets/users/' + selectedUser.name"> -->
+        
+
+        <!-- using getters see in the users.ts file -->
+        <!-- so we use getters to reduce the code in html file -->
+        <!-- <img [src]="imagePath" alt=""> -->
+        
+        <!-- String interpolation: 
+        - written in double curly braces
+        - cannot be used with attributes 
+        applying the string interpolation method from user.component.ts file
+        <span>Name</span>
+        and inside curly braces we use the variables -->
+        <!-- <span>{{ selectedUser }}</span>     o/p: [object object] -->
+
+        <!-- to get the values we use the key names inside the dummyusers.ts file  -->
+        <!-- <span>{{ selectedUser.name }}</span>     o/p: Marcus Johnson -->
+        
+    <!-- </button> -->
+<!-- </div> -->
+
+
+
+
+
+<!-- using signals -->
+<!-- More efficient as it only updates components or parts of the UI that directly depend on the changed signals.
+clearer and more maintainable code.
+Better for applications that require more control over performance and state management, especially in complex -->
+
+
+<!-- Note: whenever we are using signals we call them as functions that may be anything also we call them as functions  -->
+<!-- <div> -->
+    <!-- Adding Event Listener -->
+    <!-- to add an eventlistener in angular we write like this 
+    see in the users.ts file  -->
+    <!-- <button (click)="onbuttonClicked()">    calling method inside quotes -->
+       
+       <!-- we are using signals so we need to use them as functions see in the users.ts file -->
+        <!-- so we use like this "imagePath()" -->
+        <!-- <img [src]="imagePath()" alt=""> -->
+        
+
+        <!-- to get the values we use the key names inside the dummyusers.ts file  -->
+        <!-- <span>{{ selectedUser().name }}</span>     o/p: Marcus Johnson -->
+        
+    <!-- </button>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- adding multiple users using signals -->
+<!-- <div> -->
+    <!-- Adding Event Binding works same as event listener-->
+    <!-- to add an event binding in angular we write like this 
+    (click)="functionname()"
+    see in the users.ts file for function() -->
+    <!-- <button (click)="onbuttonClicked()">
+        
+        <img [src]="imagePath()" alt="name()"> -->
+        
+
+        <!-- to get the values we use the key names inside the dummyusers.ts file  -->
+        <!-- <span>{{ name() }}</span>     
+    </button>
+</div> -->
+
+
+
+
+
+
+
+
+<!-- adding multiple users using getters -->
+<div>
+    <!-- Adding Event Binding works same as event listener-->
+    <!-- to add an event binding in angular we write like this 
+    (click)="functionname()"
+    see in the users.ts file for function() -->
+    <button (click)="onbuttonClicked()">
+        
+        <img [src]="imagePath" alt="name">
+        
+
+        <!-- to get the values we use the key names inside the dummyusers.ts file  -->
+        <span>{{ name }}</span>     
+    </button>
+</div>

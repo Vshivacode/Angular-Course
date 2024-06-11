@@ -1,0 +1,27 @@
+<app-header/>
+<main>
+  <ul id="users">
+    <li>
+      <!-- to access the users from dummy-users.ts file we need to
+      import the dummy-users.ts file in app.component.ts file 
+      and next we declare it to a variable see in "app.ts" file 
+      under the "AppComponent" class -->
+      <app-user [avatar]="users[0].avatar" [name]="users[0].name"/>
+    </li>
+
+    <!-- adding multiple users  -->
+    <!-- adding component inputs -->
+    <li>
+      <app-user [avatar]="users[1].avatar" [name]="users[1].name"/>
+    </li>
+    <li>
+      <app-user [avatar]="users[2].avatar" [name]="users[2].name"/>
+    </li>
+    <li>
+      <app-user [avatar]="users[3].avatar" [name]="users[3].name"/>
+    </li>
+    <li>
+      <app-user [avatar]="users[4].avatar" [name]="users[4].name"/>
+    </li>
+  </ul>
+</main>

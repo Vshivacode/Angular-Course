@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo List App</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- here we have not linked any files like ts and css files 
+      because angular will link the files automatically 
+      in browser we see that .js is linked and not the ts file
+      because browsers wont support the ts files 
+      basically when we run ng serve the angular CLI converts 
+      the ts file to js file to be executed -->
+      <app-root></app-root>
+      
+      
+      <!-- to use the custom created component we add the selector here
+        and also we need to use bootstrapApplication(classname)
+ex: bootstrapApplication(HeaderComponent) in main.ts file -->
+<!-- <app-header></app-header> -->
+
+
+<!-- we can also use in another way,  
+  adding the <app-header></app-header> in app.component.html
+  and importing the HeaderComponent class in app.component.ts file 
+  and inside the decorator @Component 
+  under imports: [HeaderComponent] we add the class -->
+</body>
+</html>
