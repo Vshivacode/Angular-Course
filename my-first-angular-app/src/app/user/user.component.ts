@@ -131,7 +131,7 @@
 
 // Working with Inputs
 // adding multiple users,  using getters
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
 @Component({
@@ -173,14 +173,19 @@ export class UserComponent {
   // we can use like this "@Input({required: true})" 
     @Input({required: true}) avatar!: string;     // for image from dummy-users.ts file
     @Input({required: true}) name!: string;       // for name from dummy-users.ts file
+    @Input({required: true}) id!: string;         // for id from dummy-users.ts file
 
+
+    // creating custom events using @Output and EventEmitter
+    @Output() selectUser = new EventEmitter()
 
     get imagePath(){
       return "../assets/users/" + this.avatar;
     }
 
    onbuttonClicked(){
-    console.log("button 1 is clicked")
+    // console.log("button " + this.id + " is clicked")
+    this.selectUser.emit(this.id)   // we are getting the id of the avatar when this onbuttonClicked() function is called
    } 
   
 }

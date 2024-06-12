@@ -25,4 +25,15 @@ export class AppComponent {
   // and we use this "users" variable in app.component.html file
   // see in app.html file like this <app-user [avatar]="users[0].avatar"/>
   users = DUMMY_USERS
+
+
+
+  // this function is used in app.component.html file when we select the user
+  // looks like this in html file  (selectUser)="onselectedUser($event)"
+  // "$event" is used to access the data that is emitted by an event
+  onselectedUser(id: string){
+    console.log("the selected user id is " + id)
+  }
 }
+
+
