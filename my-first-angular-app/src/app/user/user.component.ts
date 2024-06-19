@@ -205,6 +205,28 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
+
+// type aliases:
+// here we create type aliases using the keyword "type" and the name we are denoting it
+// type User = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// }
+
+// alternative way of aliases
+// interface:
+// interface keyword and the name of the interface 
+interface User {
+  id: string;
+  avatar: string;
+  name: string;
+}
+
+
+
+
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -242,10 +264,24 @@ export class UserComponent {
   // it will show in html file because currently we are taking the values from other file
   // that is html file: use.component.html file
   // we can use like this "@Input({required: true})" 
-    @Input({required: true}) avatar!: string;     // for image from dummy-users.ts file
-    @Input({required: true}) name!: string;       // for name from dummy-users.ts file
-    @Input({required: true}) id!: string;         // for id from dummy-users.ts file
+    // @Input({required: true}) avatar!: string;     // for image from dummy-users.ts file
+    // @Input({required: true}) name!: string;       // for name from dummy-users.ts file
+    // @Input({required: true}) id!: string;         // for id from dummy-users.ts file
 
+
+    // we can simplify the above code by creating an object 
+    // @Input({required: true}) user!:{
+    //   id: string;
+    //   avatar: string;
+    //   name: string;
+    // }
+
+    // we are using
+    // @Input({required: true}) user!:{
+    //   id: string;
+    //   avatar: string;
+    //   name: string;
+    // }
 
     // creating custom events using @Output and EventEmitter
     @Output() selectUser = new EventEmitter()
@@ -256,12 +292,16 @@ export class UserComponent {
     
 
     get imagePath(){
-      return "../assets/users/" + this.avatar;
+      // return "../assets/users/" + this.avatar;
+      // now we can use the user object that we created above in this 
+      return "../assets/users/" + this.user.avatar;
     }
 
    onbuttonClicked(){
     // console.log("button " + this.id + " is clicked")
-    this.selectUser.emit(this.id)   // we are getting the id of the avatar when this onbuttonClicked() function is called
+    // this.selectUser.emit(this.id)   // we are getting the id of the avatar when this onbuttonClicked() function is called
+    // now we can use the user object that we created above in this 
+    this.selectUser.emit(this.user.id)   // we are getting the id of the avatar when this onbuttonClicked() function is called
    } 
   
 }
